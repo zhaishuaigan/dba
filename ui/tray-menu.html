@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>托盘图标右键菜单</title>
+    <style>
+        html,
+        body,
+        div,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .page {
+            margin: 5px;
+            background: #FFF;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px #999999;
+            -webkit-user-select: none;
+            /* -webkit-app-region: drag; */
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        li {
+            line-height: 30px;
+            padding: 0px 10px;
+        }
+
+        li:hover {
+            background: #EdEDED;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <ul>
+            <li onclick="showMainWin()">显示主窗口</li>
+            <li onclick="exit()">退出</li>
+        </ul>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+        function exit() {
+            ipcRenderer.send('exit');
+        }
+        function showMainWin() {
+            ipcRenderer.send('showMainWin');
+        }
+    </script>
+</body>
+
+</html>

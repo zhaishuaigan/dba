@@ -1,0 +1,87 @@
+html,
+body,
+div,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    /* margin: 5px; */
+    background: #FFF;
+    border-radius: 3px;
+    /* box-shadow: 0px 0px 5px #999999; */
+    -webkit-user-select: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page > .title {
+    -webkit-app-region: drag;
+    background: #4f7da4;
+    line-height: 30px;
+    padding: 0px 10px;
+    color: #fff;
+}
+
+.ctrl {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.ctrl span {
+    color: #fff;
+    display: inline-block;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.ctrl span:hover {
+    background: #7498b7;
+}
+.content {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.footer {
+    height: 20px;
+    border-top: 1px solid #eee;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+	width: 8px;
+	height: 8px;
+    background-color: #fff;
+}
+ 
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+	/* -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); */
+	border-radius: 3px;
+	background-color: #fff;
+}
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	border-radius: 3px;
+	/* -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3); */
+	background-color: #99999999;
+}
